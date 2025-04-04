@@ -15,6 +15,8 @@ const (
 	// Operators
 	ASSIGN   = "="
 	PLUS     = "+"
+	EQ       = "=="
+	NOT_EQ   = "!="
 	MINUS    = "-"
 	BANG     = "!"
 	ASTERISK = "*"
@@ -31,11 +33,21 @@ const (
 	// Keywords
 	FUNCTION = "FUNCTION"
 	LET      = "LET"
+	TRUE     = "TRUE"
+	FALSE    = "FALSE"
+	IF       = "IF"
+	ELSE     = "ELSE"
+	RETURN   = "RETURN"
 )
 
 var keywords = map[string]TokenType{
-	"let": LET,
-	"fn":  FUNCTION,
+	"let":    LET,
+	"fn":     FUNCTION,
+	"true":   TRUE,
+	"false":  FALSE,
+	"if":     IF,
+	"else":   ELSE,
+	"return": RETURN,
 }
 
 func ReadKeyword(input string) TokenType {
